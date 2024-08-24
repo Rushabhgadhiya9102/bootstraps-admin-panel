@@ -4,15 +4,15 @@
     box-sizing: border-box;
 }
 
-body{
+/* body{
     background-image: url("../images/HiPaint_1721072713565.jpg");
     background-position: center;
     object-fit: cover;
     background-repeat: no-repeat;
-    backdrop-filter: blur(3px);
+    background-attachment: fixed;
     width: 100%;
     height: 100vh;
-}
+} */
 
 .navbar{
     width: 5%;
@@ -24,6 +24,13 @@ body{
     src: url(../fonts/Designer.otf);
 }
 
-#chart-1{
-    
+.header-section h2, .home-page h5 span{
+    background-image: linear-gradient(to right, blue, lightseagreen);
+    background-clip: text;
+    color: transparent;
+}
+
+.navbar i:hover{
+ background-image: linear-gradient(to right, blue, lightseagreen);
+    color: white;
 }

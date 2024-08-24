@@ -1,3 +1,14 @@
+$("#user-page").hide();
+
+// ----buttons----
+
+$(".nav-link").on("click", function () {
+  $("#home-page,#user-page").hide();
+  $($(this).attr("href")).show();
+});
+
+// -------------- graph ----------
+
 window.Apex = {
   chart: {
     foreColor: "#000000",
