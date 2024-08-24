@@ -24,13 +24,22 @@
     src: url(../fonts/Designer.otf);
 }
 
-.header-section h2, .home-page h5 span{
-    background-image: linear-gradient(to right, blue, lightseagreen);
+.header-section h2, .gradient-text{
+    background-image: linear-gradient(blue, lightseagreen);
     background-clip: text;
     color: transparent;
 }
 
 .navbar i:hover{
- background-image: linear-gradient(to right, blue, lightseagreen);
+ background-image: linear-gradient(to top, blue, lightseagreen);
     color: white;
+}
+
+.gradient-color{
+     background-image: linear-gradient(blue, lightseagreen);
+    color: white !important;
+}
+
+#chart-1{
+    height: 430px;
 }

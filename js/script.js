@@ -4,7 +4,7 @@ $("#user-page").hide();
 
 $(".nav-link").on("click", function () {
   $("#home-page,#user-page").hide();
-  $($(this).attr("href")).show();
+  $($(this).attr("href")).fadeToggle();
 });
 
 // -------------- graph ----------
