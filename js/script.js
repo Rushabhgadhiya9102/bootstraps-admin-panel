@@ -1,4 +1,4 @@
-$("#user-page").hide();
+$("#home-page").hide();
 
 // ----buttons----
 
@@ -419,3 +419,6 @@ var optionsProgress1 = {
     opacity: 1,
   },
 };
+
+// calander
+
