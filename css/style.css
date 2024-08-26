@@ -1,7 +1,7 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
 }
 
 /* body{
@@ -14,44 +14,54 @@
     height: 100vh;
 } */
 
-.navbar{
-    width: 5%;
-    margin-top: 5%;
+.navbar {
+  width: 5%;
+  margin-top: 5%;
 }
 
 @font-face {
-    font-family: designer;
-    src: url(../fonts/Designer.otf);
+  font-family: designer;
+  src: url(../fonts/Designer.otf);
 }
 
-.header-section h2, .gradient-text{
-    background-image: linear-gradient(blue, lightseagreen);
-    background-clip: text;
-    color: transparent;
+.header-section h2,
+.gradient-text {
+  background-image: linear-gradient(to right, #6157ff, #ee49fd);
+  background-clip: text;
+  color: transparent;
 }
 
-.navbar i:hover{
- background-image: linear-gradient(to top, blue, lightseagreen);
-    color: white;
+.navbar i:hover {
+  background-image: linear-gradient(to right, #6157ff, #ee49fd);
+  color: white;
 }
 
-.gradient-color{
-     background-image: linear-gradient(blue, lightseagreen);
-    color: white !important;
+.gradient-color {
+  background-image: linear-gradient(to right, #6157ff, #ee49fd);
+  color: white !important;
 }
 
-#chart-1{
-    height: 430px;
+#chart-1 {
+  height: 430px;
 }
 
 /* user page */
 
-.user-item img{
-    height: 600px;
-    width: 100%;
-    object-fit: cover;
+.user-item img {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .user-img-content button{
-     background-image: linear-gradient(blue, lightseagreen);
+  background-image: linear-gradient(to right, #6157ff, #ee49fd);
+}
+
+.user-contact-item img{
+    width: 100px;
+    height: 100px;
+}
+
+.user-contact-item .social-media-icons a:hover{
+    background-image: linear-gradient(to right, #6157ff, #ee49fd);
 }
