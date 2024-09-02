@@ -1,9 +1,9 @@
-$("#home-page").hide();
+$("#home-page,#user-page").hide();
 
 // ----buttons----
 
 $(".nav-link").on("click", function () {
-  $("#home-page,#user-page").hide();
+  $("#home-page,#user-page,#message").hide();
   $($(this).attr("href")).fadeToggle();
 });
 
