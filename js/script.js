@@ -1,9 +1,9 @@
-$("#home-page,#user-page").hide();
+$("#home-page,#user-page,#message").hide();
 
 // ----buttons----
 
 $(".nav-link").on("click", function () {
-  $("#home-page,#user-page,#message").hide();
+  $("#home-page,#user-page,#message,#analysis").hide();
   $($(this).attr("href")).fadeToggle();
 });
 
@@ -420,5 +420,324 @@ var optionsProgress1 = {
   },
 };
 
-// calander
+// ANALYSIS - CHART
 
+ var options = {
+   series: [
+     {
+       name: "High - 2013",
+       data: [28, 29, 33, 36, 32, 32, 33],
+     },
+     {
+       name: "Low - 2013",
+       data: [12, 11, 14, 18, 17, 13, 13],
+     },
+   ],
+   chart: {
+     height: 350,
+     type: "line",
+     dropShadow: {
+       enabled: true,
+       color: "#000",
+       top: 18,
+       left: 7,
+       blur: 10,
+       opacity: 0.2,
+     },
+     zoom: {
+       enabled: false,
+     },
+     toolbar: {
+       show: false,
+     },
+   },
+   colors: ["#77B6EA", "#545454"],
+   dataLabels: {
+     enabled: true,
+   },
+   stroke: {
+     curve: "smooth",
+   },
+   title: {
+     text: "Average High & Low Temperature",
+     align: "left",
+   },
+   grid: {
+     borderColor: "#e7e7e7",
+     row: {
+       colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+       opacity: 0.5,
+     },
+   },
+   markers: {
+     size: 1,
+   },
+   xaxis: {
+     categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+     title: {
+       text: "Month",
+     },
+   },
+   yaxis: {
+     title: {
+       text: "Temperature",
+     },
+     min: 5,
+     max: 40,
+   },
+   legend: {
+     position: "top",
+     horizontalAlign: "right",
+     floating: true,
+     offsetY: -25,
+     offsetX: -5,
+   },
+ };
+
+ var chart = new ApexCharts(document.querySelector("#analysis-chart-1"), options);
+ chart.render();
+
+ // analysis - chart - 2
+
+  var options = {
+    series: [
+      {
+        name: "Website Blog",
+        type: "column",
+        data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160],
+      },
+      {
+        name: "Social Media",
+        type: "line",
+        data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16],
+      },
+    ],
+    chart: {
+      height: 350,
+      type: "line",
+    },
+    stroke: {
+      width: [0, 4],
+    },
+    title: {
+      text: "Traffic Sources",
+    },
+    dataLabels: {
+      enabled: true,
+      enabledOnSeries: [1],
+    },
+    labels: [
+      "01 Jan 2001",
+      "02 Jan 2001",
+      "03 Jan 2001",
+      "04 Jan 2001",
+      "05 Jan 2001",
+      "06 Jan 2001",
+      "07 Jan 2001",
+      "08 Jan 2001",
+      "09 Jan 2001",
+      "10 Jan 2001",
+      "11 Jan 2001",
+      "12 Jan 2001",
+    ],
+    yaxis: [
+      {
+        title: {
+          text: "Website Blog",
+        },
+      },
+      {
+        opposite: true,
+        title: {
+          text: "Social Media",
+        },
+      },
+    ],
+  };
+
+  var chart = new ApexCharts(document.querySelector("#analysis-chart-2"), options);
+  chart.render();
+
+  // analysis - chart - 3
+
+  var options = {
+    series: [
+      {
+        name: "Net Profit",
+        data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
+      },
+      {
+        name: "Revenue",
+        data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+      },
+      {
+        name: "Free Cash Flow",
+        data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
+      },
+    ],
+    chart: {
+      type: "bar",
+      height: 350,
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: "55%",
+        endingShape: "rounded",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ["transparent"],
+    },
+    xaxis: {
+      categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+    },
+    yaxis: {
+      title: {
+        text: "$ (thousands)",
+      },
+    },
+    fill: {
+      opacity: 1,
+    },
+    tooltip: {
+      y: {
+        formatter: function (val) {
+          return "$ " + val + " thousands";
+        },
+      },
+    },
+  };
+
+  var chart = new ApexCharts(document.querySelector("#analysis-chart-3"), options);
+  chart.render();
+
+  // analysis - chart - 4
+
+   var options = {
+     series: [
+       {
+         name: "PRODUCT A",
+         data: [44, 55, 41, 67, 22, 43],
+       },
+       {
+         name: "PRODUCT B",
+         data: [13, 23, 20, 8, 13, 27],
+       },
+       {
+         name: "PRODUCT C",
+         data: [11, 17, 15, 15, 21, 14],
+       },
+       {
+         name: "PRODUCT D",
+         data: [21, 7, 25, 13, 22, 8],
+       },
+     ],
+     chart: {
+       type: "bar",
+       height: 350,
+       stacked: true,
+       toolbar: {
+         show: true,
+       },
+       zoom: {
+         enabled: true,
+       },
+     },
+     responsive: [
+       {
+         breakpoint: 480,
+         options: {
+           legend: {
+             position: "bottom",
+             offsetX: -10,
+             offsetY: 0,
+           },
+         },
+       },
+     ],
+     plotOptions: {
+       bar: {
+         horizontal: false,
+         borderRadius: 10,
+         borderRadiusApplication: "end", // 'around', 'end'
+         borderRadiusWhenStacked: "last", // 'all', 'last'
+         dataLabels: {
+           total: {
+             enabled: true,
+             style: {
+               fontSize: "13px",
+               fontWeight: 900,
+             },
+           },
+         },
+       },
+     },
+     xaxis: {
+       type: "datetime",
+       categories: ["01/01/2011 GMT", "01/02/2011 GMT", "01/03/2011 GMT", "01/04/2011 GMT", "01/05/2011 GMT", "01/06/2011 GMT"],
+     },
+     legend: {
+       position: "right",
+       offsetY: 40,
+     },
+     fill: {
+       opacity: 1,
+     },
+   };
+
+   var chart = new ApexCharts(document.querySelector("#analysis-chart-4"), options);
+   chart.render();
+
+   // analysis - chart - 5
+
+    var options = {
+      series: [
+        {
+          data: [44, 55, 41, 64, 22, 43, 21],
+        },
+        {
+          data: [53, 32, 33, 52, 13, 44, 32],
+        },
+      ],
+      chart: {
+        type: "bar",
+        height: 430,
+      },
+      plotOptions: {
+        bar: {
+          horizontal: true,
+          dataLabels: {
+            position: "top",
+          },
+        },
+      },
+      dataLabels: {
+        enabled: true,
+        offsetX: -6,
+        style: {
+          fontSize: "12px",
+          colors: ["#fff"],
+        },
+      },
+      stroke: {
+        show: true,
+        width: 1,
+        colors: ["#fff"],
+      },
+      tooltip: {
+        shared: true,
+        intersect: false,
+      },
+      xaxis: {
+        categories: [2001, 2002, 2003, 2004, 2005, 2006, 2007],
+      },
+    };
+
+    var chart = new ApexCharts(document.querySelector("#analysis-chart-5"), options);
+    chart.render();
