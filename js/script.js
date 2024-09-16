@@ -1,11 +1,16 @@
-$("#home-page,#user-page,#message").hide();
+$("#home-page,#user-page,#message,#analysis").hide();
 
 // ----buttons----
 
 $(".nav-link").on("click", function () {
-  $("#home-page,#user-page,#message,#analysis").hide();
+  $("#home-page,#user-page,#message,#analysis,#files").hide();
   $($(this).attr("href")).fadeToggle();
 });
+
+// -------------- tooltips ---------------
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
 
 // -------------- graph ----------
 
