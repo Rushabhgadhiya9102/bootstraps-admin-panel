@@ -1,10 +1,31 @@
-$("#home-page,#user-page,#message,#analysis").hide();
+
+// Hide the specified elements initially
+document.querySelectorAll("#home-page, #user-page, #message, #analysis").forEach(function(element) {
+    element.style.display = "none";
+});
 
 // ----buttons----
+document.querySelectorAll(".nav-link").forEach(function(link) {
+    link.addEventListener("click", function(event) {
+        // Prevent default anchor click behavior
+        event.preventDefault();
 
-$(".nav-link").on("click", function () {
-  $("#home-page,#user-page,#message,#analysis,#files").hide();
-  $($(this).attr("href")).fadeToggle();
+        // Hide all specified elements
+        document.querySelectorAll("#home-page, #user-page, #message, #analysis, #files").forEach(function(element) {
+            element.style.display = "none";
+        });
+
+        // Get the target element from the href attribute and toggle its visibility
+        var targetId = this.getAttribute("href");
+        var targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            if (targetElement.style.display === "none" || targetElement.style.display === "") {
+                targetElement.style.display = "block"; // Show the element
+            } else {
+                targetElement.style.display = "none"; // Hide the element
+            }
+        }
+    });
 });
 
 // -------------- tooltips ---------------
